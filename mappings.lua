@@ -30,11 +30,58 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+    ["<leader>j"] = { name = "Custom" },
+    ["<leader>ja"] = {
+      function() require("harpoon.mark").add_file() end,
+      desc = "Add file to harpoon",
+    },
+    ["<leader>je"] = {
+      function() require("harpoon.ui").toggle_quick_menu() end,
+      desc = "Toggle quick menu",
+    },
+    ["<leader>j1"] = {
+      function() require("harpoon.ui").nav_file(1) end,
+      desc = "Go to harpoon mark 1",
+    },
+    ["<leader>j2"] = {
+      function() require("harpoon.ui").nav_file(2) end,
+      desc = "Go to harpoon mark 2",
+    },
+    ["<leader>j3"] = {
+      function() require("harpoon.ui").nav_file(3) end,
+      desc = "Go to harpoon mark 3",
+    },
+    ["<leader>j4"] = {
+      function() require("harpoon.ui").nav_file(4) end,
+      desc = "Go to harpoon mark 4",
+    },
+    ["<leader>ju"] = {
+      ":UndotreeToggle<cr>",
+      desc = "Toggle undotree",
+    },
+
+    -- Allows cursor in place when using "J"
+    J = "mzJ`z",
+    -- Keep cursor in middle during D and U
+    ["<C-d>"] = "<C-d>zz",
+    ["<C-u>"] = "<C-u>zz",
+    -- Keep cursor in middle during n and N
+    n = "nzzzv",
+    N = "Nzzzv",
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {
+    -- enables move selected line / block up and down
+    K = { ":m '<-2<CR>gv=gv" },
+    J = { ":m '>+1<CR>gv=gv" },
+  },
+  x = {
+    -- Paste and DONT copy selection
+    ["<leader>jp"] = { "_dP" },
   },
 }

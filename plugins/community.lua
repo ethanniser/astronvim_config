@@ -13,4 +13,8 @@ return {
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.haskell" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.workflow.bad-practices-nvim" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.lsp.lsp_signature-nvim" },
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 }
